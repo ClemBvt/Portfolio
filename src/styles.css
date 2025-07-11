@@ -7,19 +7,21 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #F5F5F5;
-  color: #333;
+  color: #F5F5F5;
   line-height: 1.6;
   padding: 20px;
-}
-
-header {
-  background-color: #0D00FF;
-  padding: 10px 0;
 }
 
 h1 {
   text-align: center;
   color: #F5F5F5;
+}
+
+.nav-container {
+  background-color: #0D00FF;
+  border-radius: 12px;
+  padding: 10px 20px;
+  position: relative;
 }
 
 .navbar {
@@ -30,17 +32,20 @@ h1 {
 }
 
 .navbar li {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 .navbar a {
   color: #F5F5F5;
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
 .navbar a:hover {
-  color: #b5b1ff;
+  background-color: #0D00FF;
+  color: #aca8ff;
 }
 
 .hero {
@@ -79,14 +84,50 @@ footer {
   font-size: 0.9em;
 }
 
-/* Responsive */
+/* Burger menu */
+.burger-menu {
+  display: none;
+  font-size: 30px;
+  color: #F5F5F5;
+  cursor: pointer;
+  top: 10px;
+  right: 20px;
+}
+
+#menu-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .navbar {
+    display: none;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #F5F5F5;
+    color: #0D00FF;
+    border: #0D00FF solid 2px;
+    border-radius: 12px;
+    padding: 10px 0;
+    position: absolute;
+    top: 50px;
+    left: 0;
   }
 
-  .navbar li {
-    margin: 10px 0;
+  .navbar a {
+    color: #0D00FF;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  #menu-toggle:checked + .burger-menu + .navbar {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: block;
   }
 }
 
